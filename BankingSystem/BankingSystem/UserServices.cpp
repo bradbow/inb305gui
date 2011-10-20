@@ -3,7 +3,7 @@
 // accounts. Uses the Singleton Pattern to ensure there is only
 // ever one UserServices
 
-#include <time.h>
+//#include <time.h>
 #include "UserServices.h"
 #include "stdafx.h"
 
@@ -54,12 +54,12 @@ void UserServices::changePassword(int userID, string password){
 }
 // precondition: valid userId passed in
 // postconditon: password reset to new password which is then returned
-string UserServices::resetPassword(int userID){
-
-	User *validate = getUser(userID);
-	validate->_password = generatePassword();
-	return validate->_password;
-}
+//string UserServices::resetPassword(int userID){
+//
+//	User *validate = getUser(userID);
+//	validate->_password = generatePassword();
+//	return validate->_password;
+//}
 // precondition: none
 // returns true if user exists in application data, false otherwise
 bool UserServices::userExists(int userID){
@@ -94,34 +94,34 @@ User *UserServices::getUser(int userID){
 
 // precondition: none
 // returns a random alphanumerical password string
-string UserServices::generatePassword(void){
-
-	enum asciiType{NUMERAL, LOWER_CASE, UPPER_CASE};
-	enum asciiBounds{LOWER_BOUND, UPPER_BOUND};
-	int asciiBounds[UPPER_CASE][UPPER_BOUND];
-	asciiBounds[NUMERAL][LOWER_BOUND] = 48;
-	asciiBounds[NUMERAL][UPPER_BOUND] = 57;
-	asciiBounds[LOWER_CASE][LOWER_BOUND] = 65;
-	asciiBounds[LOWER_CASE][UPPER_BOUND] = 90;
-	asciiBounds[UPPER_CASE][LOWER_BOUND] = 97;
-	asciiBounds[UPPER_CASE][UPPER_BOUND] = 122;
-	
-	srand ( time(NULL) );
-	int asciiType;
-	string str;
-
-	for (int i = 0; i < PASSWORD_LENGTH; i++)
-	{
-		// generate random ascii type (numeral, lower case, upper case)
-		asciiType = rand() % UPPER_CASE;
-		// subtract lower from upper boundary to give range
-		int range = asciiBounds[asciiType][UPPER_BOUND] 
-		- asciiBounds[asciiType][LOWER_BOUND];
-		// create random number within range starting at lower boundary
-		// then cast to matching ascii character
-		str += (char)rand() % range + asciiBounds[asciiType][LOWER_BOUND];
-	}
-	return str;
-}
+//string UserServices::generatePassword(void){
+//
+//	enum asciiType{NUMERAL, LOWER_CASE, UPPER_CASE};
+//	enum asciiBounds{LOWER_BOUND, UPPER_BOUND};
+//	int asciiBounds[UPPER_CASE][UPPER_BOUND];
+//	asciiBounds[NUMERAL][LOWER_BOUND] = 48;
+//	asciiBounds[NUMERAL][UPPER_BOUND] = 57;
+//	asciiBounds[LOWER_CASE][LOWER_BOUND] = 65;
+//	asciiBounds[LOWER_CASE][UPPER_BOUND] = 90;
+//	asciiBounds[UPPER_CASE][LOWER_BOUND] = 97;
+//	asciiBounds[UPPER_CASE][UPPER_BOUND] = 122;
+//	
+//	srand ( time(NULL) );
+//	int asciiType;
+//	string str;
+//
+//	for (int i = 0; i < PASSWORD_LENGTH; i++)
+//	{
+//		// generate random ascii type (numeral, lower case, upper case)
+//		asciiType = rand() % UPPER_CASE;
+//		// subtract lower from upper boundary to give range
+//		int range = asciiBounds[asciiType][UPPER_BOUND] 
+//		- asciiBounds[asciiType][LOWER_BOUND];
+//		// create random number within range starting at lower boundary
+//		// then cast to matching ascii character
+//		str += (char)rand() % range + asciiBounds[asciiType][LOWER_BOUND];
+//	}
+//	return str;
+//}
 
 

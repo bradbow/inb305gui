@@ -27,6 +27,11 @@ AccountServices *AccountServices::instance(void){
 	return _accountServicesInstance;
 }
 
+AccountServices::AccountServices()
+{
+	_ds = TextFileDataSource::getInstance();
+}
+
 // -------------------------------------------------------------------------------------------- //
 // behaviours
 

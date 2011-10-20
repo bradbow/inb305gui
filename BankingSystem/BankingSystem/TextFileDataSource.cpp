@@ -46,11 +46,7 @@ TextFileDataSource::TextFileDataSource()
 
 void TextFileDataSource::setFileNames(std::string fileNames[])
 {
-	_fileNames = fileNames;//new string [NUMBER_OF_FILES];
-	/*for (int i = 0; i < NUMBER_OF_FILES; i++)
-	{
-		_fileNames[i] = fileNames[i];
-	}*/
+	_fileNames = fileNames;
 }
 
 // --------------------------------------------------------------------------------------------- //
@@ -255,7 +251,7 @@ void TextFileDataSource::ConstructAndAddWithdrawalTransaction(string line)
 	};
 
 	vector<string> lineSplit = StringUtils::splitString(line, ',');
-	date dt = from_string(lineSplit[DATE]);
+	date dt; //= from_string(lineSplit[DATE]);
 
 	Withdrawal w
 	(
@@ -284,7 +280,7 @@ void TextFileDataSource::ConstructAndAddDepositTransaction(string line)
 	};
 
 	vector<string> lineSplit = StringUtils::splitString(line, ',');
-	date dt = from_string(lineSplit[DATE]);
+	date dt; //= from_string(lineSplit[DATE]);
 
 	Deposit d
 	(
@@ -314,7 +310,7 @@ void TextFileDataSource::ConstructAndAddTransferTransaction(string line)
 	};
 
 	vector<string> lineSplit = StringUtils::splitString(line, ',');
-	date dt = from_string(lineSplit[DATE]);
+	date dt; //= from_string(lineSplit[DATE]);
 
 	Transfer t
 	(

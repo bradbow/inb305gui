@@ -163,11 +163,12 @@
     <ClCompile Include="Utils.cpp">
       <Filter>Utils\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LoginForm1.cpp">
+      <Filter>Forms</Filter>
+    </ClCompile>
+    <ClCompile Include="date.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Form1.h">
-      <Filter>Forms</Filter>
-    </ClInclude>
     <ClInclude Include="DataSource.h">
       <Filter>Persistence\Header Files</Filter>
     </ClInclude>
@@ -234,19 +235,27 @@
     <ClInclude Include="resource.h">
       <Filter>Application\Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Form2.h">
-      <Filter>Forms</Filter>
-    </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>Application\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Utils.h">
       <Filter>Utils\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="LoginForm1.h">
+      <Filter>Forms</Filter>
+    </ClInclude>
+    <ClInclude Include="date.h">
+      <Filter>Forms</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resX">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

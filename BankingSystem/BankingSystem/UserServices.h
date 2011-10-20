@@ -38,7 +38,7 @@ public:
 
 	// precondition: valid userId and password pair passed in
 	// postconditon: password reset to new password which is then returned
-	string resetPassword(int userID);
+	//string resetPassword(int userID);
 
 	// precondition: none
 	// returns true if user exists in application data, false otherwise
@@ -66,7 +66,7 @@ private:
 	
 	// precondition: none
 	// postcondition: password generated of min password length
-	string generatePassword(void);
+	//string generatePassword(void);
 	UserServices(void){}
 	static const int PASSWORD_LENGTH = 6;
 	

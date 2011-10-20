@@ -71,9 +71,6 @@ public:
 	// postcondition: list of accounts matching customerID returned
 	vector<Account*> getAccountsForCustomer(int customerID);
 
-	void setDataSource(DataSource* ds){_ds = ds;}
-
-
 	// -------------------------------------------------------------------------------------------- //
 
 private:
@@ -83,7 +80,7 @@ private:
 	
 	// precondition: none
 	// postcondition: creates instance of AccountServices
-	AccountServices(){}	
+	AccountServices();	
 
 	// -------------------------------------------------------------------------------------------- //
 	// utility

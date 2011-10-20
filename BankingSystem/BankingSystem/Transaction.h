@@ -7,9 +7,10 @@
 
 
 //#include "date.h"
-#include <boost\date_time\gregorian\gregorian.hpp>
+//#include <boost\date_time\gregorian\gregorian.hpp>
+#include "date.h"
 
-using namespace boost::gregorian;
+//using namespace boost::gregorian;
 
 class Transaction
 {
