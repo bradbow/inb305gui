@@ -25,7 +25,7 @@ public:
 	// constructor
 	// precondition: valid user details passed in
 	// postcondition: user is created
-	User(int userId, string password);
+	User(int userId, std::string password);
 	// destructor
 	// precondition: none
 	// postcondition: memory deallocated
@@ -36,8 +36,8 @@ public:
 private:
 
 	int _userId;
-	string _password;
-	string _userName;
+	std::string _password;
+	std::string _userName;
 	UserType m_utType;
 };
 #endif

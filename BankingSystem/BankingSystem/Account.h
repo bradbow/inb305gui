@@ -11,7 +11,6 @@ using namespace std;
 #define _ACCOUNT_H 
 #include "stdafx.h"
 #include "TransactionExceptions.hpp"
-#include <string>
 
 class Account
 {
@@ -22,8 +21,8 @@ public:
 	
 	Account
 	(
-		int accountId, int customerId, string accountName,
-		double interestRate, double balance = 0
+		int accountId, int customerId, std::string accountName,
+		double interestRate, double balance
 	) : _accountId(accountId), _customerId(customerId), 
 	    _accountName(accountName), _interestRate(interestRate),
 		_balance(balance){}
@@ -34,14 +33,14 @@ public:
 
 	int getAccountId(){return _accountId;}
 	int getCustomerId(){return _customerId;}
-	string getAccountName(){return _accountName;}
+	std::string getAccountName(){return _accountName;}
 	double getInterestRate(){return _interestRate;}
 	double getBalance(){return _balance;}
 
 	// ----------------------------------------------------------------------------------------- // 
 	// setters
 
-	void setAccountName(string value){_accountName = value;}
+	void setAccountName(std::string value){_accountName = value;}
 	void setInterestRate(double value){_interestRate = value;}
 	void setBalance(double value){_balance = value;}
 
@@ -60,7 +59,7 @@ private:
 
 	int _accountId;
 	int _customerId;
-	string _accountName;
+	std::string _accountName;
 	double _interestRate;
 	double _balance;
 

@@ -14,7 +14,7 @@ public:
 
 	DebitAccount
 	(
-		int accountId, int customerId, string accountName,
+		int accountId, int customerId, std::string accountName,
 		double interestRate, double balance = 0
 	);
 

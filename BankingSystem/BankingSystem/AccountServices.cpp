@@ -39,7 +39,7 @@ AccountServices::AccountServices()
 // postcondition: a savings account is created and returned
 void AccountServices::makeSavingsAccount 
 (
-	string accountName, int customerId,
+	std::string accountName, int customerId,
 	double interestRate, double balance
 )
 {
@@ -54,7 +54,7 @@ void AccountServices::makeSavingsAccount
 // postcondition: a credit account is created and returned
 void AccountServices::makeCreditCardAccount 
 (
-    string accountName, int customerId,
+    std::string accountName, int customerId,
     double interestRate, double balance,
 	double overdraftLimit
 )
@@ -77,9 +77,9 @@ void AccountServices::makeCreditCardAccount
 
 //// precondition: valid parameters passed in
 //// postcondition: a home loan account is created and returned
-//HomeLoanAccount *AccountServices::createHomeLoanAccount (int accountID, string accountName, 
+//HomeLoanAccount *AccountServices::createHomeLoanAccount (int accountID, std::string accountName, 
 //                                   double interestRate, double balance,
-//                                   string propertyAddress, 
+//                                   std::string propertyAddress, 
 //                                   HomeLoanAccount::repaymentOption option, 
 //								   double minimumRepayment){
 //
@@ -100,7 +100,7 @@ void AccountServices::makeCreditCardAccount
 //
 //// precondition: valid accountType and accountID are passed in
 //// postcondition: old details are replaced by new
-//void AccountServices::changeAccountDetails(accountType type, string details[ ], int accountID){
+//void AccountServices::changeAccountDetails(accountType type, std::string details[ ], int accountID){
 //
 //	//Account *change = getAccount(accountID);
 //

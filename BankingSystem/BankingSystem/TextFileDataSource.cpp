@@ -9,6 +9,9 @@ IdMap<int, Transaction*> TextFileDataSource::_transactions;
 TextFileDataSource* TextFileDataSource::_ds = NULL;
 std::string* TextFileDataSource::_fileNames = NULL; 
 
+//#include <boost\date_time\gregorian\gregorian.hpp>
+#include "date.h"
+//using namespace boost::gregorian;
 
 // --------------------------------------------------------------------------------------------- //
 // constructors / destructors / instance retrieval
@@ -59,7 +62,7 @@ void TextFileDataSource::loadData()
 		// TODO assert on array size
 		std::ifstream rfsFile;
 		rfsFile.open(_fileNames[nFile].c_str());
-		string line;
+		std::string line;
 
 		if (rfsFile)
 		{
@@ -87,7 +90,7 @@ void TextFileDataSource::persistData()
 // --------------------------------------------------------------------------------------------- //
 // helper / utility methods
 
-void TextFileDataSource::ConstructAndAddCustomer(string line)
+void TextFileDataSource::ConstructAndAddCustomer(std::string line)
 {
 	enum 
 	{
@@ -100,8 +103,8 @@ void TextFileDataSource::ConstructAndAddCustomer(string line)
 		NUM_FIELDS
 	};
 	
-	vector<string> lineSplit = StringUtils::splitString(line, ',');
-	vector<string> accountIds = StringUtils::splitString(lineSplit[ACCOUNT_IDS], ';');
+	vector<std::string> lineSplit = stringUtils::splitstring(line, ',');
+	vector<std::string> accountIds = stringUtils::splitstring(lineSplit[ACCOUNT_IDS], ';');
 
 	// create customer
 	Customer* c = new Customer
@@ -114,7 +117,7 @@ void TextFileDataSource::ConstructAndAddCustomer(string line)
 	);
 
 	// add account ids
-	vector<string>::iterator vit;
+	vector<std::string>::iterator vit;
 	for (vit = accountIds.begin(); vit != accountIds.end(); ++vit)
 	{
 		c->addAccount(TypeConverter(*vit));
@@ -124,7 +127,7 @@ void TextFileDataSource::ConstructAndAddCustomer(string line)
 
 }
 
-void TextFileDataSource::ConstructAndAddBankClerk(string line)
+void TextFileDataSource::ConstructAndAddBankClerk(std::string line)
 {
 	enum
 	{
@@ -133,7 +136,7 @@ void TextFileDataSource::ConstructAndAddBankClerk(string line)
 		NUM_FIELDS
 	};
 
-	vector<string> lineSplit = StringUtils::splitString(line, ',');
+	vector<std::string> lineSplit = stringUtils::splitstring(line, ',');
 
 	BankClerk bc
 	(
@@ -144,7 +147,7 @@ void TextFileDataSource::ConstructAndAddBankClerk(string line)
 	_users.add(bc.getUserId(), &bc);
 }
 
-void TextFileDataSource::ConstructAndAddSavingsAccount(string line)
+void TextFileDataSource::ConstructAndAddSavingsAccount(std::string line)
 {
 	enum
 	{
@@ -156,7 +159,7 @@ void TextFileDataSource::ConstructAndAddSavingsAccount(string line)
 		NUM_FIELDS
 	};
 
-	vector<string> lineSplit = StringUtils::splitString(line, ',');
+	vector<std::string> lineSplit = stringUtils::splitstring(line, ',');
 
 	DebitAccount da
 	(
@@ -171,7 +174,7 @@ void TextFileDataSource::ConstructAndAddSavingsAccount(string line)
 
 }
 
-void TextFileDataSource::ConstructAndAddCreditCardAccount(string line)
+void TextFileDataSource::ConstructAndAddCreditCardAccount(std::string line)
 {
 	enum
 	{
@@ -184,7 +187,7 @@ void TextFileDataSource::ConstructAndAddCreditCardAccount(string line)
 		NUM_FIELDS
 	};
 
-	vector<string> lineSplit = StringUtils::splitString(line, ',');
+	vector<std::string> lineSplit = stringUtils::splitstring(line, ',');
 
 	CreditCardAccount ca
 	(
@@ -200,7 +203,7 @@ void TextFileDataSource::ConstructAndAddCreditCardAccount(string line)
 
 }
 
-void TextFileDataSource::ConstructAndAddHomeLoanAccount(string line)
+void TextFileDataSource::ConstructAndAddHomeLoanAccount(std::string line)
 {
 	enum
 	{
@@ -215,7 +218,7 @@ void TextFileDataSource::ConstructAndAddHomeLoanAccount(string line)
 		NUM_FIELDS
 	};
 
-	vector<string> lineSplit = StringUtils::splitString(line, ',');
+	vector<std::string> lineSplit = stringUtils::splitstring(line, ',');
 
 	// TODO Brad & Jeff: Dangerous....
 	int nOption = TypeConverter(lineSplit[REPAYMENT_OPTION]);
@@ -237,7 +240,7 @@ void TextFileDataSource::ConstructAndAddHomeLoanAccount(string line)
 
 }
 
-void TextFileDataSource::ConstructAndAddWithdrawalTransaction(string line)
+void TextFileDataSource::ConstructAndAddWithdrawalTransaction(std::string line)
 {
 
 	enum
@@ -250,8 +253,8 @@ void TextFileDataSource::ConstructAndAddWithdrawalTransaction(string line)
 		NUM_FIELDS
 	};
 
-	vector<string> lineSplit = StringUtils::splitString(line, ',');
-	date dt; //= from_string(lineSplit[DATE]);
+	vector<std::string> lineSplit = stringUtils::splitstring(line, ',');
+	date dt;
 
 	Withdrawal w
 	(
@@ -266,7 +269,7 @@ void TextFileDataSource::ConstructAndAddWithdrawalTransaction(string line)
 
 }
 
-void TextFileDataSource::ConstructAndAddDepositTransaction(string line)
+void TextFileDataSource::ConstructAndAddDepositTransaction(std::string line)
 {
 
 	enum
@@ -279,8 +282,8 @@ void TextFileDataSource::ConstructAndAddDepositTransaction(string line)
 		NUM_FIELDS
 	};
 
-	vector<string> lineSplit = StringUtils::splitString(line, ',');
-	date dt; //= from_string(lineSplit[DATE]);
+	vector<std::string> lineSplit = stringUtils::splitstring(line, ',');
+	date dt;
 
 	Deposit d
 	(
@@ -295,7 +298,7 @@ void TextFileDataSource::ConstructAndAddDepositTransaction(string line)
 
 }
 
-void TextFileDataSource::ConstructAndAddTransferTransaction(string line)
+void TextFileDataSource::ConstructAndAddTransferTransaction(std::string line)
 {
 
 	enum
@@ -309,8 +312,8 @@ void TextFileDataSource::ConstructAndAddTransferTransaction(string line)
 		NUM_FIELDS
 	};
 
-	vector<string> lineSplit = StringUtils::splitString(line, ',');
-	date dt; //= from_string(lineSplit[DATE]);
+	vector<std::string> lineSplit = stringUtils::splitstring(line, ',');
+	date dt;
 
 	Transfer t
 	(

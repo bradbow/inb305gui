@@ -7,23 +7,23 @@
 #include <vector>
 using namespace std;
 
-class StringUtils
+class stringUtils
 {
 public:
-	static vector<string> splitString(string str, char delimiter);
+	static vector<std::string> splitstring(std::string str, char delimiter);
 };
 
 class TypeConverter
 {
 public:
-	TypeConverter(string strData) : m_strData(strData){}
+	TypeConverter(std::string strData) : m_strData(strData){}
 
 	operator int();
 	operator double();
 	operator bool();
 
 private:
-	string m_strData;
+	std::string m_strData;
 	bool isVariantOfTrue();
 	bool isVariantOfFalse();
 };

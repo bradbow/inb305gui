@@ -22,7 +22,7 @@ public:
 	// constructors / destructors
 	HomeLoanAccount
 	(
-		int accountId, int customerId, string accountName,
+		int accountId, int customerId, std::string accountName,
 		double interestRate, double balance,
 		std::string address, RepaymentOption option, 
 		double minRepayment

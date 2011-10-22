@@ -5,12 +5,12 @@
 using namespace std;
 
 // --------------------------------------------------------------------------------------------- //
-// StringUtils
+// std::stringUtils
 
-vector<string> StringUtils::splitString(string str, char delimeter)
+vector<std::string> stringUtils::splitstring(std::string str, char delimeter)
 {
-	vector<string> vecSubStrs;	
-	string strSub;
+	vector<std::string> vecSubStrs;	
+	std::string strSub;
 	strSub = str;
 	int nIndex = 0;
 	

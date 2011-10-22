@@ -166,7 +166,6 @@
     <ClCompile Include="LoginForm1.cpp">
       <Filter>Forms</Filter>
     </ClCompile>
-    <ClCompile Include="date.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataSource.h">
@@ -244,18 +243,11 @@
     <ClInclude Include="LoginForm1.h">
       <Filter>Forms</Filter>
     </ClInclude>
-    <ClInclude Include="date.h">
-      <Filter>Forms</Filter>
-    </ClInclude>
+    <ClInclude Include="date.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Form1.resX">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
   </ItemGroup>
 </Project>

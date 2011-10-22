@@ -27,7 +27,7 @@ UserServices *UserServices::instance(void){
 }
 // precondition: valid customer details passed in
 // postcondition: customer created and added to applicationData
-void UserServices::createCustomer(string name, string address, string phoneNumber){
+void UserServices::createCustomer(std::string name, std::string address, std::string phoneNumber){
 
 	//Customer created(applicationData.nextCustomerName(), generatePassword(), name, address, phoneNumber);
 	//applicationData.addUser(created);
@@ -40,21 +40,21 @@ void UserServices::createBankClerk(){
 }
 // precondition: none
 // postcondition: validates userName and password pair
-bool UserServices::validateUser(int userID, string password){
+bool UserServices::validateUser(int userID, std::string password){
 
 	User *validate = getUser(userID);
 	return validate->_password == password;
 }
 // precondition: valid userId passed in
 // postcondition: exchanges old password for new one
-void UserServices::changePassword(int userID, string password){
+void UserServices::changePassword(int userID, std::string password){
 
 	User *validate = getUser(userID);
 	validate->_password = password;
 }
 // precondition: valid userId passed in
 // postconditon: password reset to new password which is then returned
-//string UserServices::resetPassword(int userID){
+//std::string UserServices::resetPassword(int userID){
 //
 //	User *validate = getUser(userID);
 //	validate->_password = generatePassword();
@@ -75,7 +75,7 @@ bool UserServices::deleteUser(int userID){
 }
 // precondition: valid user details passed in
 // postcondition: old details are exchanged for new
-void UserServices::updateCustomerDetails(int userID, string details[]){
+void UserServices::updateCustomerDetails(int userID, std::string details[]){
 
 	//TODO: exchange for application data user retrieve function;
 	Customer update(userID, "password", "name", "address", "phoneNumber");
@@ -92,9 +92,9 @@ User *UserServices::getUser(int userID){
 	return user;
 }
 
-// precondition: none
-// returns a random alphanumerical password string
-//string UserServices::generatePassword(void){
+ //precondition: none
+ //returns a random alphanumerical password std::string
+//std::string UserServices::generatePassword(void){
 //
 //	enum asciiType{NUMERAL, LOWER_CASE, UPPER_CASE};
 //	enum asciiBounds{LOWER_BOUND, UPPER_BOUND};
@@ -108,7 +108,7 @@ User *UserServices::getUser(int userID){
 //	
 //	srand ( time(NULL) );
 //	int asciiType;
-//	string str;
+//	std::string str;
 //
 //	for (int i = 0; i < PASSWORD_LENGTH; i++)
 //	{

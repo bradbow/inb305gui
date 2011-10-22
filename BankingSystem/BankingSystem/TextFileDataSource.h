@@ -34,7 +34,7 @@ public:
 
 	// constructors / destructors
 	static TextFileDataSource* getInstance();
-	void setFileNames(string fileNames[]);
+	void setFileNames(std::string fileNames[]);
 	virtual ~TextFileDataSource(void){};
 
 	// persistence
@@ -71,17 +71,17 @@ protected:
 	static IdMap<int, Transaction*> _transactions;
 
 	// helper methods
-	void ConstructAndAddCustomer(string line);
-	void ConstructAndAddBankClerk(string line);
-	void ConstructAndAddSavingsAccount(string line);
-	void ConstructAndAddCreditCardAccount(string line);
-	void ConstructAndAddHomeLoanAccount(string line);
-	void ConstructAndAddWithdrawalTransaction(string line);
-	void ConstructAndAddDepositTransaction(string line);
-	void ConstructAndAddTransferTransaction(string line);
+	void ConstructAndAddCustomer(std::string line);
+	void ConstructAndAddBankClerk(std::string line);
+	void ConstructAndAddSavingsAccount(std::string line);
+	void ConstructAndAddCreditCardAccount(std::string line);
+	void ConstructAndAddHomeLoanAccount(std::string line);
+	void ConstructAndAddWithdrawalTransaction(std::string line);
+	void ConstructAndAddDepositTransaction(std::string line);
+	void ConstructAndAddTransferTransaction(std::string line);
 
 	// function pointer arrray
-	void (TextFileDataSource::*m_pfns[TextFileDataSource::NUMBER_OF_FILES])(string);
+	void (TextFileDataSource::*m_pfns[TextFileDataSource::NUMBER_OF_FILES])(std::string);
 
 private:
 

@@ -3,8 +3,9 @@
 #ifndef _BASEEXCEPTION_H
 #define _BASEEXCEPTION_H
 #include "stdafx.h"
-
 #include <string>
+
+using namespace System;
 
 class BaseException
 {

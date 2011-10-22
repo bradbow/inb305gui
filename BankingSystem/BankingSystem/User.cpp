@@ -5,7 +5,7 @@
 // constructor
 // precondition: valid user details passed in
 // postcondition: user is created
-User::User(int userID, string password) 
+User::User(int userID, std::string password) 
 	: _userId(userID), _password(password)
 {
 }

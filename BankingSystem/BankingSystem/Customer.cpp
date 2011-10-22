@@ -14,10 +14,10 @@
 // postcondition: customer created
 Customer::Customer(
 	int userName,	
-	string password,
-	string name,
-	string address, 
-	string phoneNumber) :
+	std::string password,
+	std::string name,
+	std::string address, 
+	std::string phoneNumber) :
 		User(userName, password),
 			_name(name),
 			_address(address),
@@ -31,37 +31,37 @@ Customer::~Customer(void){}
 
 // precondition: none
 // postcondition: returns name
-string Customer::getName(void){
+std::string Customer::getName(void){
 
 	return _name;
 }
 // precondition: valid name passed in
 // postcondition: name set
-void Customer::setName(string name){
+void Customer::setName(std::string name){
 
 	_name = name;
 }
 // precondition: none
 // postcondition: address returned
-string Customer::getAddress(void){
+std::string Customer::getAddress(void){
 
 	return _address;
 }
 // precondition: valid address passed in
 // postcondition: address returned
-void Customer::setAddress(string address){
+void Customer::setAddress(std::string address){
 
 	_address = address;
 }
 // precondition: none
 // postcondition: phone no returned
-string Customer::getPhoneNumber(void){
+std::string Customer::getPhoneNumber(void){
 	
 	return _phoneNumber;
 }
 // precondition: valid phone no passed in
 // postcondition: phone no set
-void Customer::setPhoneNumber(string phoneNumber){
+void Customer::setPhoneNumber(std::string phoneNumber){
 
 	_phoneNumber = phoneNumber;
 }
@@ -103,10 +103,11 @@ bool Customer::hasAcocunt(void){
 	return !_accounts.empty();
 }
 
-//string Customer::operator<< (const Customer &rhs){
+// TODO cannot concatenate std::string in clr
+//std::string Customer::operator<< (const Customer &rhs){
 //
 //	Customer temp = rhs;
-//	string delimited =
+//	std::string delimited =
 //		temp.getUserId() + "," +
 //		temp._password + "," +
 //		temp._name + "," +

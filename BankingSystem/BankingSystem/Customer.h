@@ -22,10 +22,10 @@ public:
 	// postcondition: customer created
 	Customer(
 		int userName,
-		string password,
-		string name,
-		string address,
-		string phoneNumber);
+		std::string password,
+		std::string name,
+		std::string address,
+		std::string phoneNumber);
 
 	// destructor
 	// precondition: none
@@ -34,22 +34,22 @@ public:
 
 	// precondition: none
 	// postcondition: returns name
-	string getName(void);
+	std::string getName(void);
 	// precondition: valid name passed in
 	// postcondition: name set
-	void setName(string name);
+	void setName(std::string name);
 	// precondition: none
 	// postcondition: address returned
-	string getAddress(void);
+	std::string getAddress(void);
 	// precondition: valid address passed in
 	// postcondition: address returned
-	void setAddress(string address);
+	void setAddress(std::string address);
 	// precondition: none
 	// postcondition: phone no returned
-	string getPhoneNumber(void);
+	std::string getPhoneNumber(void);
 	// precondition: valid phone no passed in
 	// postcondition: phone no set
-	void setPhoneNumber(string number);
+	void setPhoneNumber(std::string number);
 	// precondition: none
 	// postcondition: returns account no's
 	// as list
@@ -68,12 +68,12 @@ public:
 	// precondition: none
 	// postcondition: returns true if accounts is not empty
 	bool hasAcocunt(void);
-	//string operator<<(const Customer &rhs);
+	//std::string operator<<(const Customer &rhs);
 
 private:
-	string _name;
-	string _address;
-	string _phoneNumber;
+	std::string _name;
+	std::string _address;
+	std::string _phoneNumber;
 	set <int > _accounts;
 	static const int NUM_FIELDS = 5;
 };

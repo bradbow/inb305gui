@@ -1,8 +1,9 @@
 #pragma once
+#include <string>
 class date
 {
 public:
-	date(void);
-	~date(void);
+	date(){};
+	date(std::string){};
 };
 

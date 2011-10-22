@@ -22,7 +22,7 @@ public:
 
 	// precondition: valid customer details passed in
 	// postcondition: customer created and added to applicationData
-	void createCustomer(string name, string address, string phoneNumber);
+	void createCustomer(std::string name, std::string address, std::string phoneNumber);
 
 	// precondition: valid bank clerk details passed in
 	// postcondition: bank clerk created and added to applicationData
@@ -30,15 +30,15 @@ public:
 
 	// precondition: none
 	// postcondition: validates userName and password pair
-	bool validateUser(int username, string password);
+	bool validateUser(int username, std::string password);
 
 	// precondition: valid userId passed in
 	// postcondition: exchanges old password for new one
-	void changePassword(int userId, string password);
+	void changePassword(int userId, std::string password);
 
 	// precondition: valid userId and password pair passed in
 	// postconditon: password reset to new password which is then returned
-	//string resetPassword(int userID);
+	std::string resetPassword(int userID);
 
 	// precondition: none
 	// returns true if user exists in application data, false otherwise
@@ -51,7 +51,7 @@ public:
 
 	// precondition: valid user userID and details passed in
 	// postcondition: old details are exchanged for new
-	void updateCustomerDetails(int userID, string details[]);
+	void updateCustomerDetails(int userID, std::string details[]);
 
 	// precondition: valid userID passed in
 	// postcondition: user matching userID is returned
@@ -66,7 +66,7 @@ private:
 	
 	// precondition: none
 	// postcondition: password generated of min password length
-	//string generatePassword(void);
+	std::string generatePassword(void);
 	UserServices(void){}
 	static const int PASSWORD_LENGTH = 6;
 	

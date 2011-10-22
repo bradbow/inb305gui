@@ -36,7 +36,7 @@ public:
 	// postcondition: a savings account is created and returned
 	void makeSavingsAccount 
 	(
-		string accountName, int customerId,
+		std::string accountName, int customerId,
         double interestRate, double balance
 	);
 
@@ -44,7 +44,7 @@ public:
 	// postcondition: a credit account is created and returned
 	void makeCreditCardAccount 
 	(
-		string accountName, int customerId,
+		std::string accountName, int customerId,
         double interestRate, double balance,
         double overdraftLimit
 	);
@@ -53,9 +53,9 @@ public:
 	// postcondition: a home loan account is created and returned
 	void makeHomeLoanAccount 
 	(
-		string accountName, int customerId,
+		std::string accountName, int customerId,
         double interestRate, double balance,
-        string propertyAddress, HomeLoanAccount::RepaymentOption option, 
+        std::string propertyAddress, HomeLoanAccount::RepaymentOption option, 
         double minimumRepayment
 	);
 
